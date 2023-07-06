@@ -38,11 +38,11 @@
 <%= form_with model: @book, class: "form-group" do |f| %>
   <div>
     <label for="title">Title</label><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control",value: "" %>
   </div>
   <div>
     <label for="body">Opinion</label><br>
-    <%= f.text_area :body, class: "form-control" %>
+    <%= f.text_area :body, class: "form-control",value: ""  %>
   </div>
   <%= f.submit 'Create Book', class: "btn btn-success mt-3" %>
 <% end %>

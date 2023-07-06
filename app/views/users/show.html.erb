@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-3">
+<%= flash[:notice] %>
+<%= render 'user' %>
+ </div>
+ <div class="col-md-1">
+   </div>
+ <div class="col-md-8">
+<h2>Books</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @books.each do |book| %>
+    <tr>
+    <td>
+    <% if book.user.profile_image.attached? %>
+      <%= image_tag book.user.profile_image, size: "75x75" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "75x75" %>
+    <% end %>
+    </td>
+      <td>
+        <%= link_to book.title, book_path(book) %>
+      </td>
+      <td><%= book.body %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+</div>
+</div>
+</div>

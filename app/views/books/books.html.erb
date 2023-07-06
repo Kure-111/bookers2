@@ -1,0 +1,29 @@
+<%= flash[:notice] %>
+<%= render 'users/user' %>
+
+<h2>Book detail</h2>
+<table>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= @user.name %></td>
+        <td>
+          <% if book.user.profile_image.attached? %>
+            <%= image_tag book.user.image, size: "50x50" %>
+          <% else %>
+            <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+        </td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><% if book.user == current_user %>
+            <%= link_to "Edit", edit_book_path(book) %>
+            <% end %></td>
+            <td><% if book.user == current_user %>
+            <%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "本当に削除しますか？"%>
+        <% end %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

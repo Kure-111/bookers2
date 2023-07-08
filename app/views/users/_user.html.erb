@@ -1,6 +1,6 @@
 <% if @book.errors.any? %>
-  <div class="alert alert-danger">
-    <p><%= @book.errors.count %>件のエラーが発生しました</p>
+  <div >
+    <p><%= @book.errors.count %>errors prohibited this obj from being saved:</p>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -34,15 +34,15 @@
   <i class="fas fa-user-cog"></i>
 <% end %>
 
-<h2>New book</h2>
-<%= form_with model: @book, class: "form-group" do |f| %>
-  <div>
-    <label for="title">Title</label><br>
-    <%= f.text_field :title, class: "form-control",value: "" %>
-  </div>
-  <div>
-    <label for="body">Opinion</label><br>
-    <%= f.text_area :body, class: "form-control",value: ""  %>
-  </div>
-  <%= f.submit 'Create Book', class: "btn btn-success mt-3" %>
-<% end %>
+<!--<h2>New book</h2>-->
+<!--<%= form_with model: @book, class: "form-group" do |f| %>-->
+<!--  <div>-->
+<!--    <label for="title">Title</label><br>-->
+<!--    <%= f.text_field :title, class: "form-control",value: "" %>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="body">Opinion</label><br>-->
+<!--    <%= f.text_area :body, class: "form-control",value: ""  %>-->
+<!--  </div>-->
+<!--  <%= f.submit 'Create Book', class: "btn btn-success mt-3" %>-->
+<!--<% end %>-->

@@ -3,6 +3,7 @@
     <div class="col-md-3">
       <%= flash[:notice] %>
       <%= render 'users/user' %>
+      <%= render 'newbook',book:@book_new %>
     </div>
 <div class="col-md-8 offset-md-1">
   <h2>Book detail</h2>
